@@ -1,47 +1,52 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Modal from './Modal';
 import './Dashboard.css';
 
 const Dashboard = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [tags, setTags] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchTags = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/tags');
-        setTags(response.data);
-        console.log(response.data);
-      } catch (err) {
-        console.error('Error fetching tags:', err);
-      }
-    };
-
     fetchTags();
+  }, []);
+
+  const fetchTags = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/tags');
+      setTags(response.data);
+    } catch (err) {
+      console.error('Error fetching tags:', err);
+    }
+  };
+  useEffect(() => {
+    fetchTags(); 
+    const intervalId = setInterval(() => {
+      fetchTags();
+    }, 1000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   const handleClick = (tag) => {
     navigate('/newpage', { state: { message: tag } });
   };
 
-  const handleAddTag = (newTag) => {
-    setTags([...tags, newTag]);
+  const handleAddTag = async (newTag) => {
+    try {
+      
+      setTags(prevTags => [...prevTags, newTag]);
+    } catch (err) {
+      console.error('Error adding tag:', err);
+    }
   };
 
   return (
     <div className="dashboard">
       <h2>Dashboard</h2>
-      <p>Welcome to the admin dashboard!</p>
-      <br />
-      <button className='add-tag' onClick={() => setIsModalOpen(true)}>Add Tag</button>
-      {isModalOpen && (
-        <Modal close={() => setIsModalOpen(false)} addTag={handleAddTag} />
-      )}
+      
       <div className="tags">
-        <h3>Tags</h3>
         <div className='tag-container'>
           {tags.map((tag, index) => (
             <div key={tag.id || index} className='tag-card' onClick={() => handleClick(tag)}>

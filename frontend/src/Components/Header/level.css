@@ -1,0 +1,60 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-container {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .header1 {
+    margin-bottom: 20px;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  
+  .dropzone {
+    border: 2px dashed #cccccc;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .asterick{
+    color: red;
+  }
+
+  #Cancel{
+    border: 2px solid  #bbbcbf;
+    border-radius: 6px;
+    padding: 3px;
+    background-color: white;
+    color:  #bbbcbf;
+    padding-inline: 5px;
+  }
+  
+  #Add{
+    border: 2px solid  #75e68e ;
+    border-radius: 6px;
+    padding: 3px;
+    background-color: white;
+    color:  #75e68e;
+    padding-inline: 7px;
+  }
+
+  label{
+    color: #2b3674;
+  }

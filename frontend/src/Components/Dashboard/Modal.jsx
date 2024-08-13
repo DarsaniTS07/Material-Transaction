@@ -56,14 +56,14 @@ const Modal = ({ close, addTag }) => {
       {!isModal1Open && (
         <div className='modal'>
           <div className='modal-container'>
-            <div className='header1'>
-              <h2>ADD TAGS</h2>
+            <div className='header1' style={{marginBottom:'0'}}>
+              <h2 >ADD TAGS</h2>
             </div>
             <div>
               <table>
                 <tbody>
                   <tr>
-                    <td><label htmlFor="tagInput">Tag Name:</label></td>
+                    <td className='Tag'><label htmlFor="tagInput">Tag Name<span className='astriek'>*</span><span className='space'style={{paddingLeft:'35px',fontWeight:'bold'}}>:</span></label></td>
                     <td><input
                       id="tagInput"
                       type="text"
@@ -73,7 +73,7 @@ const Modal = ({ close, addTag }) => {
                     /></td>
                   </tr>
                   <tr>
-                    <td><label htmlFor="levelInput">No. of Levels:</label></td>
+                    <td className='Tag'><label htmlFor="levelInput">No. of Levels<span className='astriek'>*</span><span className='space'style={{paddingLeft:'23px',fontWeight:'bold'}}>:</span></label></td>
                     <td><input
                       id="levelInput"
                       type="text"
@@ -83,7 +83,7 @@ const Modal = ({ close, addTag }) => {
                     /></td>
                   </tr>
                   <tr>
-                    <td><label htmlFor="levelInput">Objective:</label></td>
+                    <td className='Tag'><label htmlFor="objectiveInput">Tag Objective<span className='astriek'>*</span><span className='space'style={{paddingLeft:'10px',fontWeight:'bold'}}>:</span></label></td>
                     <td><input
                       id="objective"
                       type="text"
@@ -93,9 +93,9 @@ const Modal = ({ close, addTag }) => {
                     /></td>
                   </tr>
                   <tr>
-                    <td><label htmlFor="fileInput">Lv. 1 Material:</label></td>
+                    <td className='Tag'><label htmlFor="fileInput">Tag Picture<span className='astriek'>*</span><span className='space'style={{paddingLeft:"20px",fontWeight:'bold'}}>:</span></label></td>
                     <td>
-                      <div {...getRootProps({ className: 'dropzone' })}>
+                      <div {...getRootProps({ id: 'dropzone' })}>
                         <input {...getInputProps()} />
                         <p>{file ? file.name : 'Click to upload'}</p>
                       </div>
@@ -112,8 +112,9 @@ const Modal = ({ close, addTag }) => {
               </table>
             </div>
             <div className='footer'>
-              <button onClick={close}>CANCEL</button>
-              <button onClick={handleOpenModal1}>ADD</button>
+              <button id="Cancel1" onClick={close}>CANCEL</button>
+              <span style={{paddingLeft:"15px"}}></span>
+              <button id="Add" onClick={handleOpenModal1}>ADD</button>
             </div>
           </div>
         </div>

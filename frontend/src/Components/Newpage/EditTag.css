@@ -1,0 +1,62 @@
+.custom-modal2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .custom-modal2-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 380px;
+    max-width: 100%;
+  }
+  
+  .custom-modal2-header {
+    margin-bottom: 20px;
+    color:  #2b3674;
+    text-align: center;
+  }
+
+  
+  .custom-modal2-body {
+    margin-bottom: 10px;
+  }
+  
+  .custom-modal2-footer {
+    display: flex;
+    justify-content: end;
+  }
+  
+  
+
+  .can{
+    border: 2px solid  #bbbcbf;
+    border-radius: 5px;
+    padding: 3px;
+    background-color: white;
+    color:  #bbbcbf;
+    padding-inline: 5px;
+    margin-right: 20px;
+  }
+  
+  .con{
+    border: 2px solid  #75e68e ;
+    border-radius: 5px;
+    padding: 3px;
+    background-color: white;
+    color:  #75e68e;
+    padding-inline: 7px;
+  }
+
+.custom-modal2-body input{
+  margin-bottom: 20px;
+}

@@ -1,33 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
 .modal {
   position: fixed;
-  top: 0;
+  top: -20px;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
 }
 
 .modal-container {
   background: white;
-  padding: 20px;
   border-radius: 5px;
+  max-width: 90%; 
+  max-height: 80%; 
+  overflow-y: auto; 
 }
 
 .header1 {
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 100;
+  font-size: 14px; 
+  color: #2b3674;
+  font-family: 'Poppins', sans-serif;
 }
-
+.astriek{
+  color: red;
+}
 .footer {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end; 
 }
 
-.dropzone {
-  border: 2px dashed #cccccc;
-  padding: 20px;
+#dropzone {
+  border: 1px solid #d3d7ed ; /* Solid border for the dropzone */
+  border-radius: 2.5px; /* Optional: adds rounded corners */
   text-align: center;
   cursor: pointer;
+  margin-left: 10px;
+}
+
+.Tag{
+  color: #2b3674;
+  font-size: 14px;
+  
+}
+
+.space {
+  height: 40px; 
+}
+
+table {
+  border-spacing: 0 15px; 
+}
+
+input{
+  border-radius: 2.5px;
+  height: 25px;
+  border: 1px solid  #b2bbf0;
+  margin-left: 10px;
+}
+
+#dropzone p {
+  margin: 0;
+  color: #d1d7f6; /* Default color for the text */
+}
+
+#Cancel1{
+  border: 2px solid  #bbbcbf;
+  border-radius: 3px;
+  padding: 3px;
+  background-color: white;
+  color:  #bbbcbf;
+  padding-inline: 5px;
+}
+
+#Add{
+  border: 2px solid  #75e68e ;
+  border-radius: 3px;
+  padding: 3px;
+  background-color: white;
+  color:  #75e68e;
+  padding-inline: 7px;
 }

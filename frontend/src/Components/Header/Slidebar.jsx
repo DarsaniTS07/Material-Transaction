@@ -12,10 +12,23 @@ const Slidebar = () => {
         return () => clearTimeout(timer); 
     }, []);
 
+    const handleClose = () => {
+        setIsOpen(false);
+    };
+
+    const handleOverlayClick = (e) => {
+        if (e.target.classList.contains('overlay')) {
+            handleClose();
+        }
+    };
+
     return (
-        <div className={`sidebar ${isOpen ? 'open' : ''}`}>
-            <h2>Sidebar</h2>
-            <p>This is a sliding sidebar.</p>
+        <div className={`overlay ${isOpen ? 'open' : ''}`} onClick={handleOverlayClick}>
+            <div className={`slidebar ${isOpen ? 'open' : ''}`}>
+                <h2>Slidebar</h2>
+                <p>This is a sliding popup modal.</p>
+                <button onClick={handleClose}>Close</button>
+            </div>
         </div>
     );
 };

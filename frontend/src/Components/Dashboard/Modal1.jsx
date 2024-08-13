@@ -1,4 +1,5 @@
 import React from 'react';
+import './Modal1.css'
 
 const Modal1 = ({ close1, file }) => {
   const handleConfirm = () => {
@@ -9,15 +10,13 @@ const Modal1 = ({ close1, file }) => {
   return (
     <div className='modal'>
       <div className='modal-container'>
-        <div className='header1'>
-          <h2>CONFIRMATION</h2>
-        </div>
         <div>
-          <p>Are you sure you want to add this tag?</p>
+          <p>Are you sure you want to add this tag?<span className='asterik'>*</span></p>
         </div>
         <div className='footer'>
-          <button onClick={close1}>CANCEL</button>
-          <button onClick={handleConfirm}>CONFIRM</button>
+          <button id='No' onClick={close1}>NO</button>
+          <span style={{paddingLeft:"15px"}}></span>
+          <button id='Yes' onClick={handleConfirm}>YES</button>
         </div>
       </div>
     </div>

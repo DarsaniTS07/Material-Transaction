@@ -1,16 +1,37 @@
-/* Sidebar.css */
-.slidebar {
-    position: fixed; /* Fixed position to float over the content */
+.overlay {
+    position: fixed;
     top: 0;
-    left: -250px; /* Initially hide the sidebar off-screen */
-    width: 25px;
-    height: 10%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease; /* Smooth fade-in transition */
+}
+
+.overlay.open {
+    display: flex;
+    opacity: 1;
+}
+
+.slidebar {
+    position: fixed;
+    left:1200px; /* Initially hide the sidebar off-screen */
+    width: 300px;
+    top: 50px;
+    height: 400px; /* Full height */
     background-color: rgba(51, 51, 51, 0.9); /* Semi-transparent background */
     color: white;
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Add a shadow for depth */
-    transition: left 0.5s ease; /* Smooth slide-in transition */
-    z-index: 1000; /* Ensure it's on top of other content */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5); /* Add a shadow for depth */
+    transition: right 2s ease; /* Smooth slide-in transition */
+}
+
+.slidebar.open {
+    right: 0; /* Slide in the sidebar */
 }
 
 /* Optional: Add some styling for the close button */
@@ -25,9 +46,4 @@
 
 .slidebar button:hover {
     background-color: #ff1f1f;
-}
-
-
-.slidebar.open {
-    right: 0; 
 }

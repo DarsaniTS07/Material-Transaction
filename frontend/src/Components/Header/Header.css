@@ -7,7 +7,9 @@
 .header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 10px;
+    width: 100%;
 }
 
 .search {
@@ -20,24 +22,60 @@
     padding-left: 8px;
 }
 
-.add {
+.add-tag {
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid rgb(217, 214, 214);
     border-radius: 5px;
     width: 80px;
-    height: 35px;
+    height: 40px;
     background-color: #fff;
     color: #a3aed0;
     font-weight: 600;
-    margin-left: 56%;
+    margin-top: 20px;
+    margin-left: 58%;
     cursor: pointer;
+    font-size: 15px;
 }
 
-.add:hover {
+.add-tag:hover {
     background-color: #2b3674;
     color: #fff;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    /* justify-content: flex-end; */
+  }
+
+.icons{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.icons .download,
+.icons .new{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(217, 214, 214);
+    background-color: #fff;
+    color: #a3aed0;
+    border-radius: 50%;
+    width: 40px; 
+    height: 40px; 
+    margin-right: 35px;
+}
+
+.icons .download:hover,
+.icons .new:hover{
+    background-color: #2b3674;
+    color: #fff;
+    font-size: 20px; /* Set icon size to 20px */
+  font-weight: 400; 
 }
 
 .notify {
@@ -49,16 +87,15 @@
     background-color: #fff;
     color: #a3aed0;
     border-radius: 50%;
-    width: 40px; /* Adjust width as needed */
-    height: 40px; /* Adjust height as needed */
-    margin-left: 15px;
+    width: 40px; 
+    height: 40px; 
+    margin-left: 35px;
 
 }
 
 .notify-icon {
-    font-size: 24px; /* Increase font size for the icon */
+    font-size: 24px;
 }
-
 .notify:hover{
     background-color: #fff;
     color:  #2b3674;
